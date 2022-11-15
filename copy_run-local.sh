@@ -15,16 +15,6 @@ cd arquitectura-gateway
 
 cd ../
 
-cd entity-service-usuarios
-./generaImagen.sh
-
-cd ../
-
-cd entity-service-posts
-./generaImagen.sh
-
-cd ../
-
 cd ms-confirmaciones
 ./generaImagen.sh
 

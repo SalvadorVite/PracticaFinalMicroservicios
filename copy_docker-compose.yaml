@@ -8,7 +8,7 @@ services:
   gateway-server:
     image: svite/arquitectura-gateway:0.0.1
     environment:
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
     ports:
       - "8766:8766"
 
@@ -31,32 +31,6 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
-
-  api-usuarios:
-    image: svite/entity-service-usuarios:0.0.1
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/examen_usuarios
-      - SPRING_DATASOURCE_USERNAME=admin
-      - SPRING_DATASOURCE_PASSWORD=admin
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
-      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
-    ports:
-      - "8084:8084"
-    depends_on:
-      - postgres
-
-  api-posts:
-    image: svite/entity-service-posts:0.0.1
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/examen_posts
-      - SPRING_DATASOURCE_USERNAME=admin
-      - SPRING_DATASOURCE_PASSWORD=admin
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
-      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
-    ports:
-      - "8086:8086"
-    depends_on:
-      - postgres
 
   api-confirmaciones:
     image: svite/ms-confirmaciones:0.0.1
