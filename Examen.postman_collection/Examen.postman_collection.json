@@ -1,0 +1,971 @@
+{
+	"info": {
+		"_postman_id": "56c87942-46d9-4978-b07f-afbdce85fbee",
+		"name": "Examen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/usuarios/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"usuarios",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios por id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/usuarios/v1/d1fcf03d-62f7-4ba4-817b-8edd4d475967",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"usuarios",
+						"v1",
+						"d1fcf03d-62f7-4ba4-817b-8edd4d475967"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear usuarios",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuario\": \"svite\",\n    \"nombre\": \"Sofia\",\n    \"apellidoMaterno\": \"Vite\",\n    \"apellidoPaterno\": \"Vite\",\n    \"edad\": 26,\n    \"email\": \"sofia.vite@elektra.com.mx\",\n    \"direccion\": \"CDMX Insurgentes Sur 1366\",\n    \"status\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/usuarios/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"usuarios",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar usuarios",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuario\": \"marthag\",\n    \"nombre\": \"Martha\",\n    \"apellidoPaterno\": \"Garcia\",\n    \"apellidoMaterno\": \"BBS\",\n    \"edad\": 26,\n    \"email\": \"martha.garcia@elektra.com.mx\",\n    \"direccion\": \"CDMX Insurgentes Sur 1366\",\n    \"status\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/usuarios/v1/02973126-6c10-4fc8-a781-2c884c1e4422",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"usuarios",
+						"v1",
+						"02973126-6c10-4fc8-a781-2c884c1e4422"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirmación solictud",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/confirmaciones/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"confirmaciones",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirmación de solicitud por id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/confirmaciones/v1/29b401d4-8223-43bb-95a0-1efb3e03473c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"confirmaciones",
+						"v1",
+						"29b401d4-8223-43bb-95a0-1efb3e03473c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirmar solicitud",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idSolicitudAmistad\": \"1e42dc93-5d46-4d90-a6dd-1fa7a840123b\",\n    \"detallesSolicitud\": \"Solicitud rechazada\",\n    \"respuestaSolicitud\": true,\n    \"status\": true,\n    \"fechaConfirmacion\": \"2022-11-14\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/confirmaciones/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"confirmaciones",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar confirmación de solicitud",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"29b401d4-8223-43bb-95a0-1efb3e03473c\",\n    \"status\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/confirmaciones/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"confirmaciones",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Amigos",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/amigos/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"amigos",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Amigos por id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/amigos/v1/c1a85f79-0de5-41f7-ac94-7a618a6eda15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"amigos",
+						"v1",
+						"c1a85f79-0de5-41f7-ac94-7a618a6eda15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Amigos",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idUsuario\": \"test-user11-k19as-xxx-s8gs-askdkjad-1\",\n    \"idAmigo\": \"test-friend5-wqkkj12-1231-daa12\",\n    \"status\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/amigos/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"amigos",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar amistad",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idAmistad\": \"65e0c3a0-91bc-464d-8be2-4bf65458b421\",\n    \"status\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/amigos/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"amigos",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tipos de solicitudes",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/solicitudes/v1/catalogos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"solicitudes",
+						"v1",
+						"catalogos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tipos de solicitudes por id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/solicitudes/v1/catalogos/401c18f8-0899-49d0-8116-78dbbfeba418",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"solicitudes",
+						"v1",
+						"catalogos",
+						"401c18f8-0899-49d0-8116-78dbbfeba418"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear tipo de solicitudes",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Pruebas\",\n    \"descripcion\": \"Prueba de solicitud\",\n    \"status\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/solicitudes/v1/catalogos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"solicitudes",
+						"v1",
+						"catalogos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar catalogos de solicitudes",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Enviadas\",\n    \"descripcion\": \"Solicitudes de amistad enviadas.\",\n    \"status\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/solicitudes/v1/catalogos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"solicitudes",
+						"v1",
+						"catalogos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver solicitudes amistad",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/solicitudes/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"solicitudes",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver solicitudes amistad por id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/solicitudes/v1/f8f87558-e790-4567-974e-7716b47b8b7e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"solicitudes",
+						"v1",
+						"f8f87558-e790-4567-974e-7716b47b8b7e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar solicitudes amistad",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idUsuario\": \"svite\",\n    \"idTipoSolicitud\": \"2\",\n    \"status\": false,\n    \"detallesSolicitud\": \"Solicitud en proceso.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/solicitudes/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"solicitudes",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar solicitudes amistad",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idUsuario\": \"svite\",\n    \"status\": true,\n    \"detallesSolicitud\": \"Solicitud procesada.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/solicitudes/v1/a0a272ba-3fa1-45bb-adf4-cec866692a2e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"solicitudes",
+						"v1",
+						"a0a272ba-3fa1-45bb-adf4-cec866692a2e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Posts",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/posts/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"posts",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Posts por id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/posts/v1/e3fdcd42-289b-43d4-abdd-86ac01b4b7f3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"posts",
+						"v1",
+						"e3fdcd42-289b-43d4-abdd-86ac01b4b7f3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear posts",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idUsuario\": \"svite\",\n    \"titulo\": \"Segundo post...\",\n    \"descripcion\": \"Publicando mi primer post...\",\n    \"fotoUrl\": \"http://localhost:8080/posts/imagenes/imagen.png\",\n    \"idTipoPublicacion\": \"1\",\n    \"postPublico\": true,\n    \"status\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/posts/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"posts",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar posts",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "seguros",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secreto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Primer post actualizado...\",\n    \"descripcion\": \"Publicando mi primer post...\",\n    \"fotoUrl\": \"http://localhost:8080/posts/imagenes/imagen.png\",\n    \"postPublico\": true,\n    \"status\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/posts/v1/e3fdcd42-289b-43d4-abdd-86ac01b4b7f3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"posts",
+						"v1",
+						"e3fdcd42-289b-43d4-abdd-86ac01b4b7f3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

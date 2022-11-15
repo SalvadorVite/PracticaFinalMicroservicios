@@ -1,0 +1,104 @@
+version: '3.3'
+services:
+  discovery-server:
+    image: svite/discovery-server:0.0.1
+    ports:
+      - "8761:8761"
+
+  gateway-server:
+    image: svite/arquitectura-gateway:0.0.1
+    environment:
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+    ports:
+      - "8766:8766"
+
+  monitor:
+    image: svite/arquitectura-monitor-server:0.0.1
+    ports:
+      - "8090:8090"
+
+  postgres:
+    build: servicesData/postgresdb/
+    environment:
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - 5432:5432
+    volumes:
+      - ./blockstorage/postgres:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3.6.12-management-alpine
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+  api-usuarios:
+    image: svite/entity-service-usuarios:0.0.1
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/examen_usuarios
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
+    ports:
+      - "8084:8084"
+    depends_on:
+      - postgres
+
+  api-posts:
+    image: svite/entity-service-posts:0.0.1
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/examen_posts
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
+    ports:
+      - "8086:8086"
+    depends_on:
+      - postgres
+
+  api-confirmaciones:
+    image: svite/ms-confirmaciones:0.0.1
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/confirmaciones_amistad
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    ports:
+      - "8082:8082"
+    depends_on:
+      - postgres
+      - rabbitmq
+
+  api-amigos:
+    image: svite/task-service-amigos:0.0.1
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/examen_amigos
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    ports:
+      - "8083:8083"
+    depends_on:
+      - postgres
+      - rabbitmq
+
+  api-solicitudes:
+    image: svite/ms-solicitudes:0.0.1
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/solicitudes_amistad
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+      - SPRING_BOOT_ADMIN_URL=http://monitor:8090
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    ports:
+      - "8085:8085"
+    depends_on:
+      - postgres
+      - rabbitmq

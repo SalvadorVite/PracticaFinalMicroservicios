@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="arquitectura-monitor-server" />
+        <module name="discovery-server" />
+        <module name="entity-service-usuarios" />
+        <module name="task-service-amigos" />
+        <module name="ms-solicitudes" />
+        <module name="entity-service-posts" />
+        <module name="ms-confirmaciones" />
+        <module name="arquitectura-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="arquitectura-gateway" target="1.8" />
+      <module name="arquitectura-monitor-server" target="1.8" />
+      <module name="discovery-server" target="1.8" />
+      <module name="entity-service-posts" target="1.8" />
+      <module name="entity-service-usuarios" target="1.8" />
+      <module name="ms-confirmaciones" target="1.8" />
+      <module name="ms-solicitudes" target="1.8" />
+      <module name="task-service-amigos" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="discovery-server" options="-parameters" />
+      <module name="entity-service-posts" options="" />
+      <module name="ms-solicitudes" options="" />
+    </option>
+  </component>
+</project>
